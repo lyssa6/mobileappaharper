@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+h1 {text-align: center;}
+p{text-align: center;
+
+
+		 left: 50%;
+		 right: 50%;
+		 margin-top: 75px;
+		 margin-right: 300px;
+		 margin-left: 300px;}
+
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+#myBtn:hover {
+	background-color: #555;
+}
+</style>
+<title>jQuery Mobile Web App</title>
+
+<meta name="viewport" content="jquery-mobile-theme-141225-0/themes/width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="jquery-mobile-theme-141225-0/themes/mystyle.css" />
+  <link rel="stylesheet" href="jquery-mobile-theme-141225-0/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+
+<div data-role="panel" id="myPanel" data-theme="d">
+
+<h2>Navigation</h2>
+
+<ul data-role="listview" data-theme="d" data-inset"true" data-filter="true">
+
+<li class="menu" data-icon="home"><a href="#page">Home</a></li>
+
+<li class="menu" data-icon="arrow-r"><a href="#non">Non-Fiction</a></li>
+
+<li class="menu" data-icon="arrow-r"><a href="#fiction">Fiction</a></li>
+
+<li class="menu" data-icon="bars"><a href="#form">Book Submission</a></li>
+
+</ul>
+
+<p>You can close this panel by clicking outside of it, pressing the Esc key, or by swiping.</p>
+
+</div>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div id="page" data-role="page" data-theme="d" data-add-back-btn="true">
+	<div data-role="header" data-theme="d">
+	  <div class="logo"><img src="logo.png" width="100" height="100" alt=""/></div>
+	</div>
+	<header>
+	          <h1 style="font-family:cursive;">To Fiction or Not to Fiction?</h1>
+	        </header>
+  <div data-role="header">
+    <h1>Home</h1>
+				<a href="#myPanel" class="ui-btn ui-btn-inline">Menu</a>
+  </div>
+
+	<div data-role="content">
+
+		<h1>Fiction or Nonfiction?</h1>
+		  <p>Can you remember when you first realized you loved reading? Was it fiction or nonfiction? I can, I was
+		    eight years old and had recently fractured my foot. There I was watching my siblings
+		    run around playing tag football with my parents while I was stuck on the porch,
+		    unable to do any physical activity. I just sat there pouting. My mother looked over at me with pity and
+		    told me she would be right back. So she went inside and grabbed a book and came
+		    outside and said "here try reading this I think you will like it since you seem to
+		    like the things I liked as a kid." The title was <i>The Hitchhiker</i> by R.L.Stine, and instantly I was hooked.
+		    It was there and then I learned I loved fiction books. I couldn't get enough and became an adamant reader.</p>
+
+		    <p>Now of course, many can agree with me that fiction books might be a more favorable category,
+		      but in reality we might read more nonfiction than we realize on a daily basis. For example history,
+		      academic texts, travel guides, self help books, how-to manuals, etc. As you can see, we tend to read
+		      alot of nonfiction on a daily basis without even realizing it. So on the following pages I put a list of
+		      most favorited books of nonficiton and fiction over the years and where to find them. Now it is time for you
+		      to choose which category you feel fits you more. </p>
+	</div>
+	<div data-role="footer" data-theme="d">
+	  <h4>Alyssa Harper &copy; 2023</h4>
+	</div>
+</div>
+
+<div id="non" data-role="page" data-theme="d" data-add-back-btn="true">
+	<div data-role="header" data-theme="d" data-add-back-btn="true">
+		<h1>Non-Fiction</h1>
+				<a href="#myPanel" class="ui-btn ui-btn-inline">Menu</a>
+	</div>
+	<div data-role="content">
+
+  <h3>Favorite Non-Fiction Books from Across the Web</h3>
+	<div class="ui-grid-b">
+	    <div class="ui-block-a">
+	        <div class="ui-bar ui-bar-e" style="height:60px">Author</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">John Doe</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">Jane Smith</div>
+	    </div>
+	    <div class="ui-block-b">
+	        <div class="ui-bar ui-bar-e" style="height:60px">Title</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">Book 1</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">Book 2</div>
+	    </div>
+	    <div class="ui-block-c">
+	        <div class="ui-bar ui-bar-e" style="height:60px">Publication Date</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">2021-01-01</div>
+	        <div class="ui-bar ui-bar-e" style="height:60px">2022-02-02</div>
+	    </div>
+	</div><!-- /grid-b -->
+	<form id="authorForm">
+	  <label for="authorInput">Enter your favorite book author:</label>
+	  <input type="text" id="authorInput" required>
+	  <button type="submit">Add Author</button>
+	</form>
+
+	<div id="favoriteAuthorsList"></div>
+	</div>
+	<div data-role="footer" data-theme="d">
+	<h4>Alyssa Harper &copy; 2023</h4>
+	</div>
+</div>
+
+<div id="fiction" data-role="page" data-theme="d" data-add-back-btn="true">
+	<div data-role="header" data-theme="d" data-add-back-btn="true">
+		<h1>Fiction</h1>
+				<a href="#myPanel" class="ui-btn ui-btn-inline">Menu</a>
+	</div>
+	<div data-role="content">
+	  <h3>Favorite Fiction Books from Across the Web</h3>
+		<div class="ui-grid-b">
+    <div class="ui-block-a">
+        <div class="ui-bar ui-bar-f" style="height:60px">Author</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">John Doe</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">Jane Smith</div>
+    </div>
+    <div class="ui-block-b">
+        <div class="ui-bar ui-bar-f" style="height:60px">Title</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">Book 1</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">Book 2</div>
+    </div>
+    <div class="ui-block-c">
+        <div class="ui-bar ui-bar-f" style="height:60px">Publication Date</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">2021-01-01</div>
+        <div class="ui-bar ui-bar-f" style="height:60px">2022-02-02</div>
+    </div>
+</div><!-- /grid-b -->
+<form id="authorForm">
+	<label for="authorInput">Enter your favorite book author:</label>
+	<input type="text" id="authorInput" required>
+	<button type="submit">Add Author</button>
+</form>
+
+<div id="favoriteAuthorsList"></div>
+</div>
+	<div data-role="footer" data-theme="d" >
+	  <h4>Alyssa Harper &copy; 2023</h4>
+	</div>
+</div>
+
+<div id="form" data-role="page" data-theme="a" data-add-back-btn="true">
+	<div data-role="header" data-theme="d" data-add-back-btn="true">
+		<h3>Book Submission</h3>
+				<a href="#myPanel" class="ui-btn ui-btn-inline">Menu</a>
+	</div>
+  <div data-role"content">
+
+<form action="form.php" method="post">
+	<label for = "fname">Author First Name:</label>
+	<input type ="text" name="fname" id ="fname" data-clear-btn="true">
+	<label for = "lname">Author Last Name:</label>
+	<input type ="text" name="lname" id ="lname" data-clear-btn="true">
+	<label for = "title">Title:</label>
+	<input type ="text" name="title" id ="title" data-clear-btn="true">
+  <fieldset data-role="controlgroup">
+    <legend>Non-Fiction or Fiction:</legend>
+    <input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked="">
+    <label for="checkbox-1a">Non-Fiction</label>
+    <input type="checkbox" name="checkbox-2a" id="checkbox-2a">
+    <label for="checkbox-2a">Fiction</label>
+</fieldset>
+<label for="date">Publication Date:</label>
+<input type="date" name="date" id="date" value="">
+	<input type ="reset" value ="Reset Button">
+<input type="submit" value="Submit Button">
+</form>
+
+
+</div>
+	<div data-role="footer" data-theme="d">
+	  <h4>Alyssa Harper &copy; 2023</h4>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<script>
+// Retrieve the form and list elements
+const authorForm = document.getElementById('authorForm');
+const authorInput = document.getElementById('authorInput');
+const favoriteAuthorsList = document.getElementById('favoriteAuthorsList');
+
+// Add event listener to the form
+authorForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Retrieve the user's input for their favorite author
+  let favoriteAuthor = authorInput.value;
+
+  // Create an array to store the favorite authors
+  let favoriteAuthors = [];
+
+  // Check if there are any existing favorite authors stored in web storage
+  if (localStorage.getItem('favoriteAuthors')) {
+    // Parse the stored data and assign it to the array
+    favoriteAuthors = JSON.parse(localStorage.getItem('favoriteAuthors'));
+  }
+
+  // Add the new favorite author to the array
+  favoriteAuthors.push(favoriteAuthor);
+
+  // Store the updated array in web storage
+  localStorage.setItem('favoriteAuthors', JSON.stringify(favoriteAuthors));
+
+  // Clear the input field
+  authorInput.value = '';
+
+	// Display the list of favorite authors
+	  favoriteAuthorsList.innerHTML = "Your favorite authors are:<br>";
+	  for (let i = 0; i < favoriteAuthors.length; i++) {
+	    favoriteAuthorsList.innerHTML += favoriteAuthors[i] + "<br>";
+	  }
+	});
+
+
+</script>
+</body>
+</html>
